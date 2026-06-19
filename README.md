@@ -73,68 +73,33 @@ Diagnostics
 
 ---
 
-Architecture
+## Architecture
 
-Video Pipeline
+```mermaid
+flowchart LR
+    Capture --> Encode
+    Encode --> Transport
+    Transport --> Decode
+    Decode --> Display
+```
 
-HOST
-
-MediaProjection
-↓
-MediaCodec Encoder
-↓
-Transport
-↓
-
-CLIENT
-
-Transport
-↓
-MediaCodec Decoder
-↓
-SurfaceView
-
-Input Pipeline
-
-CLIENT
-
-Touch / Keyboard
-↓
-Transport
-↓
-
-HOST
-
-Input Injection
-
-Transport Layer
-
-Capture
-↓
-Encode
-↓
-Transport
-↓
-Decode
-↓
-Display
-
-Input
-↓
-Transport
-↓
-Injection
+```mermaid
+flowchart LR
+    Input --> Transport
+    Transport --> Injection
+```
 
 The transport layer can be replaced without changing the rest of the application.
 
 ---
 
-Supported Transports
+## Supported Transports
 
-Transport| Purpose
-WebRTC| Primary WiFi transport
-Direct TCP| USB tethering and fallback transport
-Scrcpy| Advanced transport for enhanced input support
+| Transport | Description |
+|------------|------------|
+| WebRTC | Primary transport for WiFi connections |
+| Direct TCP | USB tethering and fallback transport |
+| Scrcpy | Advanced transport with enhanced input support |
 
 ---
 
@@ -165,9 +130,11 @@ Security
 
 ---
 
-Project Structure
+## Project Structure
 
+```text
 RemoteLink/
+│
 ├── app/
 ├── core/
 ├── capture/
@@ -177,6 +144,7 @@ RemoteLink/
 ├── pairing/
 ├── ui/
 └── common/
+```
 
 ---
 
@@ -213,14 +181,15 @@ Phase 5
 
 ---
 
-Performance Goals
+## Performance Goals
 
-Metric| Target
-Latency| < 100ms
-Frame Rate| 60 FPS
-Video Codec| H.264
-Resolution| Up to 1080p
-Connection Types| WiFi + USB
+| Metric | Target |
+|---------|---------|
+| End-to-End Latency | < 100 ms |
+| Frame Rate | 60 FPS |
+| Resolution | Up to 1080p |
+| Codec | H.264 |
+| Connection Types | WiFi and USB |
 
 ---
 
