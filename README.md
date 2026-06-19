@@ -80,18 +80,18 @@ Video Pipeline
 HOST
 
 MediaProjection
-      ↓
+↓
 MediaCodec Encoder
-      ↓
+↓
 Transport
-      ↓
+↓
 
 CLIENT
 
 Transport
-      ↓
+↓
 MediaCodec Decoder
-      ↓
+↓
 SurfaceView
 
 Input Pipeline
@@ -99,9 +99,9 @@ Input Pipeline
 CLIENT
 
 Touch / Keyboard
-        ↓
+↓
 Transport
-        ↓
+↓
 
 HOST
 
@@ -110,19 +110,19 @@ Input Injection
 Transport Layer
 
 Capture
-   ↓
+↓
 Encode
-   ↓
+↓
 Transport
-   ↓
+↓
 Decode
-   ↓
+↓
 Display
 
 Input
-   ↓
+↓
 Transport
-   ↓
+↓
 Injection
 
 The transport layer can be replaced without changing the rest of the application.
