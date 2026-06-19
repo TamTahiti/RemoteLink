@@ -1,5 +1,5 @@
 # RemoteLink — Android-to-Android Screen Mirroring & Input Forwarding
-## Updated Development Plan (v2.0)
+## Development Plan
 
 ## 1. Project Vision
 
