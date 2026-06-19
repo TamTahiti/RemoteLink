@@ -3,10 +3,6 @@
 > **Phone as the GPU, tablet as the screen** — low-latency Android remote display with swappable backends and hardware video encoding.
 
 <p align="center">
-  <img src="docs/assets/banner.png" alt="RemoteLink banner" width="100%" />
-</p>
-
-<p align="center">
   <a href="https://github.com/yourname/remotelink/releases"><img src="https://img.shields.io/github/v/release/yourname/remotelink?style=flat-square" alt="Latest release" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/yourname/remotelink?style=flat-square" alt="License" /></a>
   <img src="https://img.shields.io/badge/Android-8.0%2B-green?style=flat-square&logo=android" alt="Android 8.0+" />
@@ -37,28 +33,26 @@ The primary use case is **mobile gaming**: run a game on your phone (where your 
 
 ## Screenshots
 
-| Mode Select | HOST Active | CLIENT Display | Settings |
-|:-----------:|:-----------:|:--------------:|:--------:|
-| *(coming soon)* | *(coming soon)* | *(coming soon)* | *(coming soon)* |
+| *(coming soon)* |
 
 ---
 
 ## How It Works
 
 ```
-┌─────────────────────────────────┐         ┌────────────────────────────────┐
+┌────────────────────────────┐         ┌───────────────────────────┐
 │          PHONE (HOST)           │         │         TABLET (CLIENT)        │
 │                                 │         │                                │
 │  Game / App running normally    │         │  Full-screen display           │
 │          │                      │         │         │                      │
 │  MediaProjection (screen cap)   │         │  MediaCodec decoder            │
 │          │                      │  Video  │         │                      │
-│  MediaCodec encoder  ───────────┼────────►│  SurfaceView                   │
+│  MediaCodec encoder  ─────────┼───────►│  SurfaceView                   │
 │  H.264 / HEVC / VP9             │         │                                │
-│          ▲                      │  Input  │  Touch / keyboard / gamepad    │
-│  Input injection  ◄─────────────┼─────────│  captured and forwarded        │
+│          ▲                     │  Input  │  Touch / keyboard / gamepad    │
+│  Input injection  ◄───────────┼───────│  captured and forwarded        │
 │  (Accessibility / ADB)          │         │                                │
-└─────────────────────────────────┘         └────────────────────────────────┘
+└────────────────────────────┘         └───────────────────────────┘
         WebRTC · Direct TLS TCP · scrcpy (ADB)
 ```
 
