@@ -1,0 +1,2 @@
+-dontwarn dagger.hilt.**
+-keep class dagger.hilt.** { *; }
